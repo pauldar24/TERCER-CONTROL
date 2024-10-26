@@ -110,6 +110,7 @@ button a {
   background-color: #F0B941;
   border-radius: 40px;
   border: solid;
+  text-align: center;
 }  
 .parrfInicio {
   font-size: 25px;
@@ -122,17 +123,4 @@ button a {
   margin-bottom: 5px;
   height: 260px;
   place-items: center;
-}
-.information{
-  background-color: aliceblue;
-  width:300px;
-  height: 85px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  margin: 0 0 10px 0;
-  text-align: center;
-  border:solid;
-  border-top:none;
-  border-color: black;
-  padding:10px;
 }
