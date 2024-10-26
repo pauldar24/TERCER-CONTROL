@@ -86,7 +86,7 @@ button {
   width:330px;
   height:50px;
   padding:8px;
-  margin:50px;
+  margin:70px;
   font-size: 18px;
   background-color: #F0B941;
   border:none;
@@ -106,12 +106,10 @@ button a {
   height: 360px;
   display: inline-block;
   place-items: center;
-  margin: 50px 5px 5px 80px;
+  margin: 50px 30px 5px 130px;
   background-color: #F0B941;
   border-radius: 40px;
   border: solid;
-  margin-left: 15%;
-  transform: translateX(-15%);
   place-items: center;
 }  
 .parrfInicio {
