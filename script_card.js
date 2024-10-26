@@ -2,11 +2,10 @@ const Card = ({ category, srcimagen, title, description, price }) => {
     return (
       <div class="productRow" data-category={category}>
         <img src={srcimagen} width="200" height="267" class="product-img" />
-        <div>
-          <h5 class="product-title">{title}</h5>
-          <p class="product-description">{description}</p>
-        </div>
+        <div class="information">
+          <h5 class="product-information">{title}</h5>
         <small class="product-price">{price}</small>
+        </div>
       </div>
     );
   };
