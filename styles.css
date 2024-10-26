@@ -118,7 +118,8 @@ button a {
 }
 .product-img {
   border-radius: 25px;
-  margin:25px 0 5px 0;
+  margin:25px;
+  margin-bottom: 5px;
   height: 260px;
   place-items: center;
 }
