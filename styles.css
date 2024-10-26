@@ -112,6 +112,7 @@ button a {
   border: solid;
   margin-left: 15%;
   transform: translateX(-15%);
+  place-items: center;
 }  
 .parrfInicio {
   font-size: 25px;
