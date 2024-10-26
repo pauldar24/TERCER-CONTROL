@@ -1,0 +1,50 @@
+[
+    {
+      "category": "products",
+      "title": "Primera equipación 24/25 Barcelona",
+      "price": "S/200",
+      "src": "IMAGENES/BARCELONA/barcelona.jpeg"
+    },
+    {
+      "category": "products",
+      "title": "Segunda equipación 24/25 Barcelona",
+      "price": "S/180",
+      "src": "IMAGENES/BARCELONA/barcelona-segunda.jpeg"
+    },
+    {
+      "category": "products",
+      "title": "Primera equipación 24/25 Real Madrid",
+      "price": "S/200",
+      "src": "IMAGENES/REAL-MADRID/madrid.jpeg"
+    },
+    {
+      "category": "products",
+      "title": "Segunda equipación 24/25 Real Madrid",
+      "price": "S/180",
+      "src": "IMAGENES/REAL-MADRID/madrid-segunda.jpeg"
+    },
+    {
+      "category": "products",
+      "title": "Primera equipación 24/25 Manchester City",
+      "price": "S/200",
+      "src": "IMAGENES/MANCHESTER-CITY/city.jpeg"
+    },
+    {
+      "category": "products",
+      "title": "Segunda equipación 24/25 Manchester City",
+      "price": "S/180",
+      "src": "IMAGENES/MANCHESTER-CITY/city-segunda.jpeg"
+    },
+    {
+      "category": "products",
+      "title": "Lionel Messi camiseta Aqua 24/25 Inter Miami",
+      "price": "S/200",
+      "src": "IMAGENES/OTROS-EQUIPOS/inter-miami.jpeg"
+    },
+    {
+      "category": "products",
+      "title": "Casaca adicolor Selección Peruana",
+      "price": "S/180",
+      "src": "IMAGENES/PERÚ/peru-casaca.jpeg"
+    }
+  ]

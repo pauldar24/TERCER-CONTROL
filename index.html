@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FutSite</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" src="script.js"></script>
+    <script type="text/babel" src="script_card.js"></script>
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            cardsData: [],
+          };
+        }
+
+        componentDidMount() {
+          fetch("data_pies.json")
+            .then((response) => response.json())
+            .then((data) => {
+              this.setState({ cardsData: data });
+            })
+            .catch((error) => console.error("hay un error", error));
+        }
+
+        render() {
+          return (
+            <div>
+              <Navigation />
+            <h1>FutSite</h1>
+            <p class="parrfInicio">¡FutSite te ofrece las mejores camisetas y ropas de equipos de fútbol más actuales!</p>
+              <CardList cardsData={this.state.cardsData} />
+            </div>
+          );
+        }
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+    <div>
+      <button><a href="alltshirts.html">VER TODOS LOS PRODUCTOS</a></button>
+    </div>
+  </body>
+  <footer>
+    <h4>NAVEGACIÓN:</h4>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="alltshirts.html">Productos</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <p><span>UBÍCANOS EN:</span> Av. La Molina</p>
+  </footer>
+</html>
