@@ -16,12 +16,13 @@
       crossorigin
       src="https://unpkg.com/@babel/standalone/babel.min.js"
     ></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="text/babel" src="script.js"></script>
-    <script type="text/babel" src="script_card.js"></script>
+    <script type="text/babel" src="../JS/script_card.js"></script>
+    <script type="text/babel" src="../JS/component.common.js"></script>
     <script type="text/babel">
       class App extends React.Component {
         constructor(props) {
@@ -32,7 +33,7 @@
         }
 
         componentDidMount() {
-          fetch("data_pies.json")
+          fetch("../JSON/data_pies.json")
             .then((response) => response.json())
             .then((data) => {
               this.setState({ cardsData: data });
@@ -44,9 +45,12 @@
           return (
             <div>
               <Navigation />
-            <h1>FutSite</h1>
-            <p class="parrfInicio">¡FutSite te ofrece las mejores camisetas y ropas de equipos de fútbol más actuales!</p>
+              <Welcome/>
               <CardList cardsData={this.state.cardsData} />
+              <div className="flex justify-center">
+              <button className="bg-yellow-600 flex justify-center"><a href="products.html">VER TODOS LOS PRODUCTOS</a></button>
+              </div>
+              <Footer/>
             </div>
           );
         }
@@ -55,18 +59,5 @@
       const root = ReactDOM.createRoot(document.getElementById("root"));
       root.render(<App />);
     </script>
-    <div>
-      <button><a href="alltshirts.html">VER TODOS LOS PRODUCTOS</a></button>
-    </div>
   </body>
-  <footer>
-    <h4>NAVEGACIÓN:</h4>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="alltshirts.html">Productos</a></li>
-        <li><a href="about.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-    <p><span>UBÍCANOS EN:</span> Av. La Molina</p>
-  </footer>
 </html>

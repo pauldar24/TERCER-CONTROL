@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nosotros</title>
+    <title>Contacto</title>
     <script
       crossorigin
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -16,16 +16,21 @@
       crossorigin
       src="https://unpkg.com/@babel/standalone/babel.min.js"
     ></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="text/babel" src="script.js"></script>
+  <body class="min-h-screen flex flex-col">
+    <div id="root" class="flex-grow"></div>
+    <script type="text/babel" src="../JS/component.common.js"></script>
+    <script type="text/babel" src="../JS/component.formulario.js"></script>
     <script type="text/babel">
       const App = () => {
         return (
-          <div>
+          <div  className="flex flex-col min-h-screen">
             <Navigation />
+            <Formulario/>
+            <div className="flex-grow"></div>
+            <Footer/>
           </div>
         );
       };

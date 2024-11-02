@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Productos</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+    ></script>
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" src="../JS/component.common.js"></script>
+    <script type="text/babel" src="../JS/filter.js"></script>
+    <script type="text/babel" src="../JS/script_card.js"></script>
+    <script type="text/babel">
+     class App extends React.Component {
+       constructor(props) {
+         super(props);
+         this.state = {
+           cardsData: [],
+           filter: 'all',
+         };
+       }
+     
+       componentDidMount() {
+         fetch("../JSON/data_pies.json")
+           .then((response) => response.json())
+           .then((data) => {
+             this.setState({ cardsData: data });
+           })
+           .catch((error) => console.error("Hay un error", error));
+       }
+     
+       handleFilterChange = (category) => {
+         this.setState({ filter: category });
+       };
+     
+       render() {
+         const { cardsData, filter } = this.state;
+     
+         const filteredCards = cardsData.filter(card => {
+           return filter === 'all' || card.category === filter;
+         });
+     
+         return (
+           <div>
+             <Navigation />
+             <h1 className="mt-4 text-blue-700 text-4xl font-bold">Categorías</h1>
+             <div className="flex justify-center mt-0">
+             <Filter onFilterChange={this.handleFilterChange} />
+             </div>
+             <CardList cardsData={filteredCards} />
+             <div className="flex-grow mt-9"></div>
+             <Footer />
+           </div>
+         );
+       }
+     }
+     
+     const root = ReactDOM.createRoot(document.getElementById("root"));
+     root.render(<App />);
+
+    </script>
+  </body>
+</html>
